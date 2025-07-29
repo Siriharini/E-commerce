@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSphere - Your Unique E-commerce Destination</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="commerce.css">
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-lg py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 border-b border-gray-100">
+        <div class="flex items-center">
+            <a href="#" class="text-3xl font-extrabold text-indigo-700 flex items-center group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 mr-2 text-indigo-600 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                SmartSphere
+            </a>
+        </div>
+        <!-- Desktop Navigation with Text Links -->
+        <nav class="hidden md:flex space-x-8">
+            <a href="#" id="home-nav-link" class="nav-link">Home</a>
+            <a href="#" id="shop-nav-link" class="nav-link">Shop</a>
+            <a href="#" id="categories-nav-link" class="nav-link">Categories</a>
+            <a href="#" id="about-us-nav-link" class="nav-link">About Us</a>
+            <a href="#" id="contact-nav-link" class="nav-link">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-6">
+            <button id="cart-button" class="relative p-3 bg-indigo-50 text-indigo-700 rounded-full hover:bg-indigo-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span id="cart-count" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full transform translate-x-1/2 -translate-y-1/2 min-w-[24px] min-h-[24px] flex items-center justify-center">0</span>
+            </button>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-700 hover:text-indigo-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl py-5 px-6 absolute w-full z-40 border-b border-gray-100">
+        <nav class="flex flex-col space-y-4">
+            <a href="#" id="mobile-home-nav-link" class="mobile-nav-link">Home</a>
+            <a href="#" id="mobile-shop-nav-link" class="mobile-nav-link">Shop</a>
+            <a href="#" id="mobile-categories-nav-link" class="mobile-nav-link">Categories</a>
+            <a href="#" id="mobile-about-us-nav-link" class="mobile-nav-link">About Us</a>
+            <a href="#" id="mobile-contact-nav-link" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-12 flex-grow">
+        <!-- Product Grid Section (Initially visible, controlled by JS) -->
+        <div id="product-grid-section" class="main-content-section">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-12 text-center leading-tight">Discover Our Exclusive Collection</h1>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+                <!-- Product cards will be injected here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- About Us Section (Initially hidden, controlled by JS) -->
+        <div id="about-us-section" class="main-content-section hidden">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-12 text-center leading-tight">About SmartSphere</h1>
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-6">Our Story & Commitment</h2>
+                <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Welcome to SmartSphere, your premier destination for high-quality electronics and gadgets.
+                    Founded in 2025, our mission is to bring you the latest and most innovative products
+                    that enhance your daily life, all while ensuring exceptional quality and value.
+                </p>
+                <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                    We believe in providing products that are not just functional, but also stylish and reliable.
+                    Every item in our collection undergoes rigorous quality checks to meet our high standards.
+                    From the latest headphones to powerful gaming PCs, we curate our selection to ensure you get
+                    the best technology available.
+                </p>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Why Choose SmartSphere?</h3>
+                <ul class="list-disc list-inside text-left text-gray-600 text-lg space-y-2 max-w-2xl mx-auto">
+                    <li><span class="font-medium text-gray-800">Uncompromising Quality:</span> We source products from trusted manufacturers known for their durability and performance.</li>
+                    <li><span class="font-medium text-gray-800">Curated Selection:</span> Hand-picked items that represent the best in technology and design.</li>
+                    <li><span class="font-medium text-gray-800">Customer Satisfaction:</span> Your happiness is our priority. We offer dedicated support and hassle-free returns.</li>
+                    <li><span class="font-medium text-gray-800">Competitive Pricing:</span> Get premium products without breaking the bank.</li>
+                </ul>
+                <p class="text-gray-700 text-lg mt-8 leading-relaxed">
+                    Thank you for choosing SmartSphere. We are excited to be a part of your journey in discovering
+                    amazing products!
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Us Section (Initially hidden, controlled by JS) -->
+        <div id="contact-us-section" class="main-content-section hidden">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-12 text-center leading-tight">Get in Touch with Us</h1>
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-6 text-center">How Can We Help?</h2>
+                <p class="text-gray-700 text-lg mb-8 text-center">
+                    Have a question, feedback, or facing an issue? Please fill out the form below, and we'll get back to you as soon as possible.
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Your Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" placeholder="you@example.com" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-lg font-medium text-gray-700 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" placeholder="Regarding my recent order / Product inquiry" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-lg font-medium text-gray-700 mb-2">Your Message / Problem Description</label>
+                        <textarea id="message" name="message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200" placeholder="Please describe the issue or your question in detail..." required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 shadow-lg contact-submit-button">
+                            Send Message
+                        </button>
+                    </div>
+                    <div id="form-message" class="text-center mt-4 text-green-600 font-medium hidden"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Categories Section (Initially hidden, controlled by JS) -->
+        <div id="categories-section" class="main-content-section hidden">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-12 text-center leading-tight">Explore Our Product Categories</h1>
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg max-w-5xl mx-auto">
+                <p class="text-gray-700 text-lg mb-8 text-center leading-relaxed">
+                    Dive into our diverse range of products, carefully organized to help you find exactly what you're looking for.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Category Card: Electronics -->
+                    <div class="category-card bg-indigo-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-indigo-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-1.25-3M15 10V5a3 3 0 00-3-3H9a3 3 0 00-3 3v5m3 4h.01M12 14h.01M15 14h.01M12 10h.01M15 10h.01M12 7h.01M15 7h.01" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-indigo-800 mb-3">Electronics</h3>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Discover the latest in personal tech, from high-fidelity audio to powerful computing devices.
+                            Includes: Headphones, Laptops, Smart Home Assistants, Cameras, etc.
+                        </p>
+                    </div>
+
+                    <!-- Category Card: Computing & Gaming -->
+                    <div class="category-card bg-purple-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 7h14c2.209 0 4 1.791 4 4v3c0 2.209-1.791 4-4 4H5c-2.209 0-4-1.791-4-4v-3c0-2.209 1.791-4 4-4z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-purple-800 mb-3">Computing & Gaming</h3>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Unleash your potential with high-performance laptops, gaming PCs, and essential accessories.
+                            Includes: Laptops, Gaming PCs, Keyboards, Mice, Monitors.
+                        </p>
+                    </div>
+
+                    <!-- Category Card: Smart Devices & Wearables -->
+                    <div class="category-card bg-green-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-green-800 mb-3">Smart Devices & Wearables</h3>
+                        <p class="text-700 text-base leading-relaxed">
+                            Integrate technology seamlessly into your lifestyle with smartwatches, fitness trackers, and home assistants.
+                            Includes: Smart Watches, Fitness Trackers, Smart Home Assistants.
+                        </p>
+                    </div>
+
+                    <!-- Category Card: Home & Lifestyle -->
+                    <div class="category-card bg-yellow-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l-7 7m7-7v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-yellow-800 mb-3">Home & Lifestyle</h3>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Enhance your living space and daily routines with innovative home and lifestyle gadgets.
+                            Includes: Portable Espresso Makers, Smart Desk Lamps, etc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 w-full md:w-[420px] h-full bg-gradient-to-br from-white to-indigo-50 shadow-2xl transform translate-x-full transition-transform duration-500 ease-in-out z-50 flex flex-col">
+        <div class="p-7 border-b border-indigo-100 flex justify-between items-center bg-indigo-600 text-white rounded-t-lg">
+            <h2 class="text-3xl font-bold">Your Shopping Cart</h2>
+            <button id="close-cart-button" class="text-white hover:text-indigo-100 focus:outline-none p-1 rounded-full hover:bg-indigo-700 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div id="cart-items" class="flex-grow p-7 overflow-y-auto space-y-5">
+            <!-- Cart items will be injected here by JavaScript -->
+            <p id="empty-cart-message" class="text-center text-gray-500 text-lg mt-8">Your cart is feeling a bit empty!</p>
+        </div>
+        <div class="p-7 border-t border-indigo-100 bg-white shadow-inner">
+            <div class="flex justify-between items-center mb-5">
+                <span class="text-2xl font-semibold text-gray-800">Total:</span>
+                <span id="cart-total" class="text-3xl font-bold text-indigo-700">₹0.00</span>
+            </div>
+            <button class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 shadow-lg checkout-button">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-10 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">&copy; 2025 SmartSphere. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="commerce.js"></script>
+</body>
+</html>

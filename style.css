@@ -1,0 +1,297 @@
+/* commerce.css - Custom Styles for AuraBazaar E-commerce Store */
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* Lightest gray background */
+    line-height: 1.6;
+    color:#4D1C3E; /* Dark slate gray for general text */
+}
+
+/* Header Enhancements */
+header {
+    border-bottom: 1px solid #e2e8f0; /* Subtle border at the bottom of the header */
+}
+
+/* Main Brand Title (AuraBazaar) */
+header .text-indigo-700 { /* Targeting the brand name link */
+    color: #4D1C3E; /* Changed to user's specified color */
+}
+
+header .text-indigo-600 { /* Targeting the SVG icon next to brand name */
+    color: #4D1C3E; /* Changed to user's specified color */
+}
+
+/* --- Navigation Links (for text links) --- */
+.nav-link {
+    position: relative;
+    padding-bottom: 0.35rem; /* Space for underline effect */
+    font-weight: 500;
+    color: #4D1C3E; /* Changed to user's specified color */
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px; /* Thicker underline */
+    bottom: 0;
+    left: 0;
+    background-color: #4D1C3E; /* Changed to user's specified color */
+    border-radius: 2px; /* Rounded underline ends */
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth cubic-bezier transition */
+}
+
+.nav-link:hover {
+    color: #3A152E; /* Darker shade for hover */
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Navigation Links */
+.mobile-nav-link {
+    font-weight: 500;
+    color: #4D1C3E; /* Keep a neutral color for mobile links, or change if desired */
+    padding: 0.75rem 0;
+    display: block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-bottom: 1px solid #f1f5f9; /* Separator for menu items */
+}
+
+.mobile-nav-link:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-link:hover {
+    background-color: #f1f5f9; /* Light background on hover */
+    color: #4D1C3E; /* Changed to user's specified color on hover */
+}
+
+/* Cart Button */
+#cart-button {
+    background-color: #4D1C3E; /* Changed to user's specified color */
+    color: #ffffff; /* Text/icon color for contrast */
+}
+
+#cart-button:hover {
+    background-color: #3A152E; /* Darker shade for hover */
+    color: #f0f0f0; /* Slightly lighter text/icon on hover */
+    box-shadow: 0 4px 10px rgba(77, 28, 62, 0.3); /* Adjusted shadow */
+}
+
+#cart-button:focus {
+    box-shadow: 0 0 0 3px rgba(77, 28, 62, 0.5); /* Focus ring color */
+}
+
+/* Mobile Menu Button */
+#mobile-menu-button {
+    color: #4D1C3E; /* Changed to user's specified color */
+}
+#mobile-menu-button:hover {
+    color: #3A152E; /* Darker shade for hover */
+}
+
+
+/* Main Section Titles */
+/* Applying the specified color to all H1 elements within main content sections */
+.main-content-section h1 {
+    color: #4D1C3E; /* User's specified color for titles */
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 16px; /* Even more rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* More pronounced, soft shadow */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative; /* For potential overlay effects */
+}
+
+.product-card:hover {
+    transform: translateY(-12px) scale(1.02); /* Lift and subtle zoom */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.product-card img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    object-fit: cover;
+    height: 16rem; /* Increased height to make image more prominent (h-64 equivalent) */
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover img {
+    transform: scale(1.05); /* Slight image zoom on hover */
+}
+
+.product-card h3 {
+    color: #4D1C3E; /* Darker heading */
+    font-weight: 700; /* Bolder heading */
+    font-size: 1.25rem; /* Slightly smaller heading (text-xl to text-lg equivalent) */
+}
+
+.product-card p {
+    color: #4D1C3E; /* Medium slate gray for description */
+    font-size: 0.95rem;
+}
+
+.product-card .price {
+    color: #4D1C3E; /* Changed to user's specified color */
+    font-size: 2.25rem; /* Larger price font */
+    font-weight: 800; /* Extra bold price */
+    letter-spacing: -0.025em; /* Tighten letter spacing */
+}
+
+.product-card .add-to-cart-btn {
+    background-color: #4D1C3E; /* Changed to user's specified color */
+    padding: 0.85rem 1.75rem;
+    border-radius: 10px; /* More rounded buttons */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(77, 28, 62, 0.4); /* Adjusted shadow color */
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card .add-to-cart-btn:hover {
+    background-color: #3A152E; /* Darker shade for hover effect */
+    box-shadow: 0 6px 20px rgba(58, 21, 46, 0.5); /* Adjusted shadow color */
+    transform: translateY(-3px); /* More pronounced lift */
+}
+
+.product-card .add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(77, 28, 62, 0.3); /* Adjusted shadow color */
+}
+
+/* Cart Sidebar Styling */
+#cart-sidebar {
+    background: linear-gradient(to bottom right, #ffffff, #f0f4f8); /* Subtle gradient background for main sidebar body */
+    border-left: 1px solid #e2e8f0;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15); /* Stronger sidebar shadow */
+}
+
+/* Cart Sidebar Header (Cart settings) */
+#cart-sidebar > div:first-child { /* Targeting the first div child of #cart-sidebar which is the header */
+    background-color: #4D1C3E; /* Changed to user's specified color */
+}
+
+#cart-sidebar h2 { /* Targeting the h2 inside the cart header */
+    color: #ffffff; /* White heading for contrast */
+}
+
+/* Cart Sidebar Close Button */
+#close-cart-button {
+    color: #ffffff; /* White icon for contrast */
+}
+#close-cart-button:hover {
+    color: #f0f0f0; /* Slightly lighter on hover */
+    background-color: #3A152E; /* Darker shade for hover background */
+}
+
+
+/* Custom Scrollbar for Cart Items */
+#cart-items::-webkit-scrollbar {
+    width: 10px; /* Wider scrollbar */
+}
+
+#cart-items::-webkit-scrollbar-track {
+    background: #e0e7ff; /* Lighter track for cart */
+    border-radius: 10px;
+}
+
+#cart-items::-webkit-scrollbar-thumb {
+    background: #4D1C3E; /* Changed to user's specified color */
+    border-radius: 10px;
+    border: 2px solid #e0e7ff; /* Border around thumb */
+}
+
+#cart-items::-webkit-scrollbar-thumb:hover {
+    background: #3A152E; /* Darker shade for hover */
+}
+
+/* Cart Item Styling */
+#cart-items > div { /* Target direct children of cart-items */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+#cart-items > div:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+#cart-items img {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.remove-from-cart-btn {
+    background-color: #ffe4e6; /* Light red background */
+    color: #ef4444; /* Red icon */
+    border-radius: 50%; /* Circular button */
+    padding: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.remove-from-cart-btn:hover {
+    background-color: #fecaca; /* Darker red background on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Cart Total Display */
+#cart-sidebar .text-2xl.font-semibold.text-gray-800, /* "Total:" label */
+#cart-total { /* Total amount */
+    color: #4D1C3E; /* Changed to user's specified color */
+}
+
+
+/* Checkout Button */
+.checkout-button {
+    background-color: #4D1C3E; /* Changed to user's specified color */
+    box-shadow: 0 6px 20px rgba(77, 28, 62, 0.4); /* Adjusted shadow */
+}
+
+.checkout-button:hover {
+    background-color: #3A152E; /* Darker shade for hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(58, 21, 46, 0.6);
+}
+
+.checkout-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(77, 28, 62, 0.3);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1a202c; /* Very dark gray/black for footer */
+    color:#4D1C3E; /* Lighter text for contrast */
+    border-top: 1px solid #4D1C3E;
+}
+
+footer a {
+    color: #4D1C3E;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* Utility for hidden elements (can be overridden by Tailwind's hidden) */
+.hidden {
+    display: none;
+}
